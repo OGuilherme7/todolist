@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="icon" href="./images/todolist-logo.png" type="image/png">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-logo">
+            <img src="./images/todolist-logo.png" alt="logo" width="70" height="70">
+        </div>
+        <nav>
+            <ul>
+                <a href="./cadastro">
+                    <li>
+                        <img src="./images/perfil.svg" alt="perfil" width="40" height="40">
+                    </li>
+                </a>
+                <% if (usuarioLogado) { %>
+                    <li style="font-weight: bold; font-family: arial;">
+                        <%= usuarioLogado.nome %>
+                    </li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="tasks">
+        <ul>
+            <% for (let i = 0; i < usuarioLogado.tasks.length; i++) { %>
+                <li>
+                    <span><%= usuarioLogado.tasks[i].taskName %></span>
+                    <div class="square-task">
+                        <% if (usuarioLogado.tasks[i].markup) { %>
+                            <img src="images/correto-task.png" width="13" height="13">
+                        <% } %>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+        <span class="erros"></span><br>
+        <input type="text" placeholder="Task" id="task">
+        <input type="submit" value="Criar" id="criar-task">
+    </section>
+
+    <script src="/scripts/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 5%;
+    background-color: #BDC7FF;
+}
+
+header nav {
+    width: 10%;
+}
+
+header nav ul {
+    justify-content: space-between;
+    display: flex;
+    list-style: none;
+    height: 100%;
+}
+
+.tasks {
+    padding: 2rem 2rem;
+}
+
+
+.square-task {
+    display: inline-block;
+    width: 12px;
+    border: 2px solid black;
+    height: 12px;
+    margin-left: 0.4rem;
+}
+
+.erros {
+    color: red;
+}
