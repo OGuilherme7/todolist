@@ -32,7 +32,7 @@
 
     <section class="tasks">
         <ul>
-            <% for (let i = 0; i < usuarioLogado.tasks.length; i++) { %>
+            <% for (let i = 0; i < usuarioLogado?.tasks.length; i++) { %>
                 <li>
                     <span><%= usuarioLogado.tasks[i].taskName %></span>
                     <div class="square-task">

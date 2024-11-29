@@ -29,7 +29,12 @@ app.post('/', (req, res) => {
     req.on('end', () => {
 
         const usuariosBanco = JSON.parse(fs.readFileSync(caminhoBancoUsuarios, 'utf-8'));
-        const usuarioLogado = usuariosBanco.find(usuario => usuario.logado);     
+        const usuarioLogado = usuariosBanco.find(usuario => usuario.logado);   
+        
+        if (!usuarioLogado) {
+            res.send('Nenhuma conta logada.');
+            return;
+        }
         
         try {
             const marcaocaoObj = JSON.parse(body);
